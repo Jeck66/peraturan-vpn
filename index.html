@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peraturan Pengguna VPN Premium - ZakyStore</title>
+    <title>Peraturan & Ketentuan VPN Premium - ZakyStore</title>
     <style>
         :root {
             --primary: #1a73e8;
@@ -31,19 +30,43 @@
         }
         
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
         }
         
         header {
             text-align: center;
-            padding: 30px 0;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 30px 15px;
+            background: radial-gradient(circle at top left, #42a5f5, #1a237e);
             color: white;
-            border-radius: 10px;
+            border-radius: 16px;
             margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            top: -60px;
+            right: -40px;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            bottom: -40px;
+            left: -20px;
         }
         
         .logo {
@@ -52,23 +75,46 @@
         }
         
         h1 {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             margin-bottom: 10px;
-            font-weight: 600;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
         
         .subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 5px;
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-bottom: 4px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            font-size: 0.78rem;
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,0.4);
+            background: rgba(0,0,0,0.15);
+            backdrop-filter: blur(4px);
         }
         
         .intro {
             background-color: white;
             padding: 25px;
-            border-radius: 10px;
+            border-radius: 14px;
             margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
             border-left: 4px solid var(--primary);
         }
         
@@ -76,6 +122,25 @@
             color: var(--primary);
             margin-bottom: 10px;
             font-size: 1.3rem;
+        }
+
+        .intro-points {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .intro-pill {
+            background: #f0f7ff;
+            padding: 8px 12px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+            font-size: 0.85rem;
         }
         
         .rules-container {
@@ -86,135 +151,186 @@
         
         .rule-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid rgba(0,0,0,0.03);
         }
         
         .rule-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
         }
         
         .rule-header {
             display: flex;
             align-items: center;
-            padding: 15px 20px;
-            background-color: var(--primary);
+            padding: 14px 18px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
         }
         
         .rule-number {
             background-color: white;
             color: var(--primary);
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            font-weight: 700;
             margin-right: 15px;
+            font-size: 1rem;
         }
         
         .rule-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
         }
         
         .rule-content {
-            padding: 20px;
+            padding: 18px 20px 20px;
+            font-size: 0.96rem;
         }
         
-        .device-list {
-            margin: 15px 0;
+        .device-list,
+        .consequence-list,
+        .prohibition-list,
+        .purpose-list,
+        .benefit-list {
+            margin: 12px 0;
             padding-left: 20px;
         }
         
-        .device-list li {
-            margin-bottom: 8px;
+        .device-list li,
+        .consequence-list li,
+        .prohibition-list li,
+        .purpose-list li,
+        .benefit-list li {
+            margin-bottom: 6px;
         }
         
         .warning-box {
             background-color: #fff8e1;
             border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 0 5px 5px 0;
+            padding: 12px 14px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
         }
         
         .warning-box h4 {
             color: #ff9800;
-            margin-bottom: 8px;
-        }
-        
-        .consequence-list {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-        
-        .consequence-list li {
-            margin-bottom: 5px;
-        }
-        
-        .prohibition-list {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-        
-        .prohibition-list li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            font-size: 0.97rem;
         }
         
         .highlight-box {
             background-color: #e8f5e9;
             border-left: 4px solid var(--secondary);
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 0 5px 5px 0;
+            padding: 12px 14px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
         }
-        
-        .purpose-list {
-            margin: 15px 0;
-            padding-left: 20px;
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid var(--primary);
+            padding: 12px 14px;
+            margin: 12px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
         }
-        
-        .purpose-list li {
-            margin-bottom: 8px;
+
+        .label-chip {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: #f1f3f4;
+            font-size: 0.8rem;
+            margin-right: 6px;
+            margin-top: 4px;
         }
         
         .closing {
             background-color: white;
             padding: 25px;
-            border-radius: 10px;
+            border-radius: 14px;
             margin-top: 30px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
             text-align: center;
             border-top: 4px solid var(--primary);
         }
         
         .quote {
             font-style: italic;
-            margin: 20px 0;
-            padding: 15px;
+            margin: 18px 0;
+            padding: 12px 14px;
             background-color: #f0f7ff;
-            border-radius: 8px;
+            border-radius: 10px;
             border-left: 4px solid var(--primary);
+            font-size: 0.95rem;
         }
         
         .tagline {
             font-weight: 600;
             color: var(--primary);
-            margin-top: 15px;
+            margin-top: 12px;
         }
-        
+
+        .cta-container {
+            margin-top: 18px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-primary,
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 16px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            box-shadow: 0 3px 10px rgba(26, 115, 232, 0.35);
+        }
+
+        .btn-outline {
+            background: white;
+            color: var(--primary-dark);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-primary:hover,
+        .btn-outline:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
         footer {
             text-align: center;
-            margin-top: 40px;
-            padding: 20px;
+            margin-top: 35px;
+            padding: 20px 10px;
             color: var(--gray-text);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        footer span {
+            opacity: 0.7;
         }
         
         @media (max-width: 600px) {
@@ -223,7 +339,7 @@
             }
             
             header {
-                padding: 20px 15px;
+                padding: 22px 14px;
             }
             
             h1 {
@@ -231,7 +347,15 @@
             }
             
             .intro, .rule-content, .closing {
-                padding: 15px;
+                padding: 16px;
+            }
+
+            .rule-header {
+                padding: 12px 14px;
+            }
+
+            .rule-title {
+                font-size: 1rem;
             }
         }
     </style>
@@ -239,16 +363,35 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">⚙️</div>
-            <h1>PERATURAN PENGGUNA VPN PREMIUM</h1>
-            <p class="subtitle">By ZakyStore 🛰️</p>
-            <p class="subtitle">(Berlaku untuk SSH | VMESS | VLESS | TROJAN)</p>
+            <div class="logo">🛰️</div>
+            <h1>PERATURAN & KETENTUAN VPN PREMIUM</h1>
+            <p class="subtitle">ZakyStore VPN Premium ⚡</p>
+            <p class="subtitle">Berlaku untuk SSH • VMESS • VLESS • TROJAN</p>
+            <div class="badge-list">
+                <div class="badge">Stabil untuk Harian</div>
+                <div class="badge">Bisa Dijual Kembali</div>
+                <div class="badge">Program Reseller Tersedia</div>
+            </div>
         </header>
         
         <section class="intro">
-            <h2>Halo sobat pengguna VPN 👋</h2>
-            <p>Terima kasih sudah mempercayakan koneksi kamu ke ZakyStore 💙</p>
-            <p>Agar koneksi kamu tetap stabil, cepat, dan nyaman, mohon dibaca dan dipahami beberapa aturan berikut ya ⤵️</p>
+            <h2>Halo, Sobat ZakyStore 👋</h2>
+            <p>Terima kasih sudah mempercayakan koneksi kamu ke <strong>ZakyStore VPN Premium</strong> 💙</p>
+            <p>Agar koneksi tetap <strong>stabil, cepat, dan nyaman</strong> untuk semua pengguna (baik pemakai pribadi maupun yang jualan lagi), mohon dibaca dan dipahami aturan di bawah ini ya ⤵️</p>
+            
+            <div class="intro-points">
+                <div>✅ Koneksi stabil & ping rendah</div>
+                <div>✅ Paket boleh dipakai sendiri maupun dijual kembali</div>
+                <div>✅ Ada program reseller bagi yang ingin fokus jualan</div>
+            </div>
+
+            <div class="intro-pill">
+                ℹ️ <span>
+                    <strong>Catatan:</strong> Jual kembali diperbolehkan selama mengikuti ketentuan pada bagian 
+                    <strong>“Ketentuan Jual Kembali & Reseller”</strong>. Untuk menjadi reseller resmi, 
+                    <strong>silakan PM admin</strong>.
+                </span>
+            </div>
         </section>
         
         <div class="rules-container">
@@ -259,28 +402,31 @@
                     <div class="rule-title">Order Sesuai Kebutuhan Perangkat</div>
                 </div>
                 <div class="rule-content">
-                    <p>Kami menyediakan paket sesuai kebutuhan kamu:</p>
+                    <p>Kami menyediakan beberapa jenis paket sesuai perangkat yang digunakan:</p>
                     <ul class="device-list">
-                        <li><strong>📱 1 HP</strong> → khusus untuk 1 perangkat HP.</li>
-                        <li><strong>📱📱 2 HP</strong> → khusus untuk 2 HP.</li>
-                        <li><strong>📺 STB / OpenWRT / Router / PC</strong> → gunakan akun khusus perangkat tersebut.</li>
+                        <li><strong>📱 Paket 1 HP</strong> → khusus untuk 1 perangkat HP (personal use).</li>
+                        <li><strong>📱📱 Paket 2 HP / Keluarga</strong> → maksimal 2 HP, cocok untuk user & keluarga kecil.</li>
+                        <li><strong>📺 Paket STB / OpenWRT / Router / PC</strong> → gunakan akun khusus perangkat tersebut.</li>
                     </ul>
                     
                     <div class="warning-box">
                         <h4>⚠️ Penting:</h4>
-                        <p>Jangan gunakan akun 1 HP di STB, Router, atau OpenWRT. Karena sistem server kami sudah diatur sesuai jenis perangkat agar performa tetap seimbang.</p>
+                        <p>
+                            Jangan gunakan akun <strong>1 HP</strong> di <strong>STB, Router, OpenWRT, atau dibagi ke banyak perangkat</strong>. 
+                            Sistem server kami sudah diatur sesuai jenis perangkat supaya performa tetap seimbang.
+                        </p>
                     </div>
                     
-                    <p>Kalau kamu memakai akun tidak sesuai peruntukannya, bisa menyebabkan:</p>
+                    <p>Jika akun digunakan tidak sesuai peruntukan, bisa menyebabkan:</p>
                     <ul class="consequence-list">
                         <li>❌ VPN sering DC (disconnect)</li>
                         <li>❌ Ping hilang / koneksi tidak stabil</li>
-                        <li>❌ Performa akun jadi menurun</li>
+                        <li>❌ Kecepatan terasa turun</li>
                     </ul>
                     
                     <div class="highlight-box">
-                        <p>🟢 Tapi tenang, buat pelanggan yang patuh aturan, koneksi tetap stabil & tidak akan terdampak, karena sistem kami sudah memisahkan pengguna sesuai jenis akun.</p>
-                        <p>Jadi, pelanggar aturan hanya kena dampak di akunnya sendiri — bukan ke pelanggan lain.</p>
+                        <p>🟢 Pengguna yang patuh aturan akan tetap merasakan koneksi stabil & nyaman, karena sistem kami sudah memisahkan pengguna berdasarkan jenis akun.</p>
+                        <p>Jadi, <strong>dampak buruk hanya akan dirasakan oleh akun pelanggar</strong> — bukan ke pelanggan lain.</p>
                     </div>
                 </div>
             </div>
@@ -292,16 +438,16 @@
                     <div class="rule-title">Gunakan Akun dengan Bijak</div>
                 </div>
                 <div class="rule-content">
-                    <p>Harap gunakan akun kamu sesuai fungsinya:</p>
+                    <p>Harap gunakan akun sesuai fungsinya dan <strong>hindari penyalahgunaan</strong>:</p>
                     <ul class="prohibition-list">
-                        <li>🚫 Jangan berbagi akun ke orang lain.</li>
-                        <li>🚫 Jangan jual kembali tanpa izin admin.</li>
-                        <li>🚫 Jangan gunakan untuk aktivitas ilegal (DDoS, spam, bot, mining, dll).</li>
-                        <li>🚫 Jangan melebihi batas koneksi yang sudah ditentukan di paket.</li>
+                        <li>🚫 Dilarang digunakan untuk aktivitas ilegal: DDoS, spam, bot, peretasan, penipuan, dan sejenisnya.</li>
+                        <li>🚫 Dilarang mining (crypto mining) menggunakan server kami.</li>
+                        <li>🚫 Dilarang melebihi batas koneksi perangkat yang sudah ditentukan di paket.</li>
+                        <li>🚫 Dilarang membagikan akun ke publik (grup gratisan, panel publik, dll).</li>
                     </ul>
                     
                     <div class="warning-box">
-                        <p>Bila ditemukan pelanggaran, akun dapat dibekukan atau dihapus tanpa refund.</p>
+                        <p>Jika ditemukan pelanggaran berat, akun dapat <strong>diblokir permanen</strong> tanpa refund demi keamanan dan kenyamanan pengguna lain.</p>
                     </div>
                 </div>
             </div>
@@ -310,42 +456,74 @@
             <div class="rule-card">
                 <div class="rule-header">
                     <div class="rule-number">3</div>
-                    <div class="rule-title">Tentang Koneksi & Performa</div>
+                    <div class="rule-title">Tentang Koneksi & Performa Server</div>
                 </div>
                 <div class="rule-content">
-                    <p>Server di ZakyStore sudah dikelola dengan sistem manajemen terbaik agar semua pengguna mendapatkan:</p>
+                    <p>Server di ZakyStore dikelola dengan sistem manajemen yang rapi agar semua pengguna (user biasa maupun penjual ulang) mendapatkan:</p>
                     <ul class="purpose-list">
                         <li>✅ Koneksi stabil</li>
                         <li>✅ Ping rendah</li>
                         <li>✅ Kecepatan merata</li>
                     </ul>
                     
-                    <p>Kami pisahkan server berdasarkan jenis perangkat agar pengguna lain tidak terkena dampak dari pelanggar aturan. Jadi:</p>
+                    <p>Kami memisahkan server berdasarkan:</p>
+                    <ul class="purpose-list">
+                        <li>📱 Server khusus pengguna HP</li>
+                        <li>📺 Server khusus STB / Router / OpenWRT</li>
+                        <li>💼 Server khusus kebutuhan tertentu (misal bisnis / reseller, sesuai kesepakatan)</li>
+                    </ul>
                     
                     <div class="highlight-box">
-                        <p><strong>Pengguna patuh aturan</strong> → tetap stabil & lancar.</p>
-                        <p><strong>Pengguna melanggar</strong> → otomatis dibatasi oleh sistem (DC/DC, ping loss, dll).</p>
+                        <p><strong>Pengguna yang tertib aturan</strong> → koneksi akan tetap stabil & lancar.</p>
+                        <p><strong>Pengguna yang melanggar</strong> → sistem otomatis membatasi (sering DC, ping loss, speed turun) sebagai bentuk proteksi server.</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- Aturan 4 -->
+
+            <!-- Aturan 4: Jual Kembali & Reseller -->
             <div class="rule-card">
                 <div class="rule-header">
                     <div class="rule-number">4</div>
-                    <div class="rule-title">Komplain & Bantuan</div>
+                    <div class="rule-title">Ketentuan Jual Kembali & Reseller</div>
                 </div>
                 <div class="rule-content">
-                    <p>Kami siap bantu kalau penggunaan kamu sesuai aturan 👍</p>
-                    <p>Saat komplain, mohon sertakan:</p>
-                    <ul class="device-list">
-                        <li>Username / akun VPN kamu,</li>
-                        <li>Jenis perangkat,</li>
-                        <li>Dan penjelasan singkat masalahnya.</li>
-                    </ul>
+                    <p>
+                        ZakyStore mendukung kamu yang ingin <strong>cuan tambahan</strong> dari jualan VPN.  
+                        Akun dari kami boleh <strong>langsung kamu jual kembali</strong> dengan ketentuan berikut:
+                    </p>
                     
+                    <span class="label-chip">Untuk Penjual Ulang / User yang Jual Kembali</span>
+                    <ul class="prohibition-list">
+                        <li>🔹 Boleh dijual kembali ke pelanggan kamu, selama tetap menjaga kualitas & aturan pemakaian.</li>
+                        <li>🔹 1 akun idealnya untuk 1 pengguna akhir (tidak dijadikan akun rame-rame / panel gratisan).</li>
+                        <li>🔹 Dilarang menjual paket yang jelas-jelas melanggar batas perangkat (misal: akun 1 HP dijual untuk dipakai di banyak perangkat / STB).</li>
+                        <li>🔹 Harga jual bebas, tapi disarankan tidak merusak pasar secara ekstrem.</li>
+                    </ul>
+
+                    <span class="label-chip">Untuk yang Ingin Jadi Reseller Resmi</span>
+                    <div class="info-box">
+                        <p>
+                            Kalau kamu ingin <strong>fokus jualan</strong> dan butuh stok lebih banyak / harga lebih miring,  
+                            kamu bisa gabung sebagai <strong>Reseller ZakyStore</strong>. Benefit utama:
+                        </p>
+                        <ul class="benefit-list">
+                            <li>💰 Harga lebih murah khusus reseller.</li>
+                            <li>📦 Bisa jual kembali ke pelanggan kamu dengan margin lebih leluasa.</li>
+                            <li>🧾 Branding bebas: boleh pakai nama toko kamu sendiri.</li>
+                            <li>🛠️ Bantuan setting dasar & tips jualan (sesuai kesepakatan dengan admin).</li>
+                        </ul>
+                        <p style="margin-top:8px;">
+                            <strong>Untuk menjadi reseller, silakan PM admin dan bilang mau daftar reseller.</strong>
+                        </p>
+                    </div>
+
                     <div class="warning-box">
-                        <p>Komplain karena pelanggaran (contoh: akun 1HP dipakai di STB) tidak akan kami proses.</p>
+                        <p>
+                            <strong>Penting:</strong><br>
+                            — Penyalahgunaan jual kembali (misal: dibuat akun publik liar, dipakai untuk aktivitas ilegal)  
+                            bisa berujung pembatasan atau pemblokiran akun.  
+                            <br>— Semua aktivitas jual beli di luar admin resmi adalah tanggung jawab penjual masing-masing.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -354,36 +532,65 @@
             <div class="rule-card">
                 <div class="rule-header">
                     <div class="rule-number">5</div>
-                    <div class="rule-title">Tujuan Kami</div>
+                    <div class="rule-title">Komplain, Support & Layanan</div>
                 </div>
                 <div class="rule-content">
-                    <p>Peraturan ini dibuat supaya semua pelanggan nyaman dan tidak saling mengganggu.</p>
-                    <p>Dengan patuh pada aturan:</p>
-                    <ul class="purpose-list">
-                        <li>✨ Koneksi lebih stabil</li>
-                        <li>✨ Server lebih awet</li>
-                        <li>✨ Semua pengguna bisa menikmati kualitas premium</li>
+                    <p>Kami siap bantu kalau penggunaan kamu masih dalam koridor aturan 👍</p>
+                    <p>Saat komplain, mohon sertakan:</p>
+                    <ul class="device-list">
+                        <li>🔑 Username / akun VPN kamu,</li>
+                        <li>📱 Jenis perangkat (HP / STB / Router / PC),</li>
+                        <li>📝 Penjelasan singkat masalah (DC, lemot, tidak bisa konek, dll).</li>
                     </ul>
                     
-                    <p>Kami di ZakyStore selalu berusaha kasih pelayanan terbaik untuk kamu 💪</p>
+                    <div class="warning-box">
+                        <p>
+                            Komplain karena pelanggaran (contoh: akun 1 HP dipakai di STB / dijual ke banyak orang,  
+                            dipakai mining, DDoS, dan sebagainya) <strong>tidak akan kami proses</strong>,  
+                            dan bisa berujung pemblokiran akun.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Aturan 6 -->
+            <div class="rule-card">
+                <div class="rule-header">
+                    <div class="rule-number">6</div>
+                    <div class="rule-title">Tujuan Peraturan Ini</div>
+                </div>
+                <div class="rule-content">
+                    <p>Peraturan ini dibuat supaya:</p>
+                    <ul class="purpose-list">
+                        <li>✨ Koneksi semua user tetap stabil.</li>
+                        <li>✨ Server lebih awet & minim gangguan.</li>
+                        <li>✨ Baik pengguna biasa, penjual ulang, maupun reseller sama-sama nyaman pakai layanan ZakyStore.</li>
+                    </ul>
+                    
+                    <p>Kami di <strong>ZakyStore</strong> selalu berusaha memberikan <strong>kualitas premium</strong> dengan tetap menjaga harga bersahabat 💪</p>
                 </div>
             </div>
         </div>
         
         <section class="closing">
             <h2>💬 Penutup</h2>
-            <p>Terima kasih sudah menjadi bagian dari ZakyStore VPN Family 💙</p>
+            <p>Terima kasih sudah menjadi bagian dari <strong>ZakyStore VPN Family</strong> 💙</p>
             <p>Gunakan dengan bijak, patuhi aturan, dan rasakan bedanya koneksi premium yang stabil, cepat, dan aman.</p>
             
             <div class="quote">
-                🔰 "Yang patuh aturan tetap stabil — yang melanggar, akan terasa bedanya." 🔰
+                🔰 <strong>"Yang patuh aturan tetap stabil — yang melanggar, akan langsung terasa bedanya."</strong> 🔰
             </div>
             
-            <p class="tagline">🌐 ZakyStore — Premium VPN, Koneksi Stabil, Harga Bersahabat.</p>
+            <p class="tagline">🌐 ZakyStore — Premium VPN, Koneksi Stabil, Bisa Sekaligus Jadi Ladang Cuan.</p>
+
+            <div class="cta-container">
+                <a href="https://wa.me/628xxxxxxx" class="btn-primary">💼 PM Admin • Daftar Reseller</a>
+                <a href="https://wa.me/6281389560464" class="btn-outline">🛒 Order Paket / Jual Kembali</a>
+            </div>
         </section>
         
         <footer>
-            <p>&copy; 2023 ZakyStore. All rights reserved.</p>
+            <p>&copy; <span>2023–2025 ZakyStore VPN.</span> All rights reserved.</p>
         </footer>
     </div>
 </body>
